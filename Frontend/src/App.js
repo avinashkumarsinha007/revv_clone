@@ -1,10 +1,9 @@
-import {Product} from "../src/components/Product/product"
-import loggedInNavbar from "../src/components/LoggedInNavbar"
+import {Router} from "./Routes/Routes"
 
 function App() {
   return (
     <div>
-     <Product/>
+    <Router/>
     </div>
   );
 }
