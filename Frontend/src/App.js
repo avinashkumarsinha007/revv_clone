@@ -8,6 +8,7 @@ function App() {
      <CarouselBanner/>
      <hr/>
      {/* <CarouselBannerOpen/> */}
+     
     </div>
   );
 }
