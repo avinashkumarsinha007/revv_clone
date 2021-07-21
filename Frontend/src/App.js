@@ -1,5 +1,5 @@
 import {Product} from "../src/components/Product/product"
-import LoggedInNavbar from "./Components/LoggedInNavbar";
+import loggedInNavbar from "../src/components/LoggedInNavbar"
 
 function App() {
   return (

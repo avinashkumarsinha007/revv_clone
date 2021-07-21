@@ -51,26 +51,13 @@ cursor: pointer;
 `
 
 export const SecondaryCustomCard = styled.div`
-    @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap");
-    font-family: "Fira Sans", sans-serif;
-    font-size: 2.3vh;
-    display: flex;
-    letter-spacing: 0.26px;
-    line-height: 17px;
-    flex-direction: column;
-    gap: 10px;
-    padding: 1.5% 1.5%;
-    padding-bottom: 5%;
+   
+    width:32%;
+    padding-bottom: 1.5%;
+    border-radius:5px;
     background: white;
-    cursor: pointer;
-    /* cursor: none; */
-    & img {
-        height: 40vh;
-    }
-    :hover {
-        border-color: grey;
-        box-shadow: 0 0 10px grey;
-    }
+    margin-top:5%;
+    box-shadow: 0 0 10px grey;
     & label:nth-child(2) {
         font-weight: bold;
     }
@@ -78,10 +65,8 @@ export const SecondaryCustomCard = styled.div`
         color: #99a6c7;
     }
     @media (max-width: 768px) {
+        display:none;
         padding: 2% 2%;
-        img {
-            width: 99%;
-        }
     }
 `;
 

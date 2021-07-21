@@ -1,0 +1,78 @@
+.Container1{
+    height: 9%;
+    background-color: rgb(236, 236, 236);
+    padding-left: 10px;
+}
+
+.header1{
+ padding-top:2% ;
+ padding-bottom: 2%;
+ text-align: left;
+ font-size: 30px;
+ letter-spacing: 0;
+}
+.header2{
+ font-size: 20px;
+ margin-left: 10px;
+}
+
+.paper{
+    text-align: center;
+    height: 50px;
+    cursor: pointer;
+    user-select: none;
+}
+.image1{
+    margin-left: -20px;
+}
+.Button1{
+    background-image: linear-gradient(270deg,#1caba2 25%,#1c7fab);
+    height: 60px;
+    width: 90%;
+    margin: auto;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+.p1{
+    font-size: 200%;
+    font-weight: bold;
+    margin-left: 25px;
+}
+
+.p2{
+    font-size: 110%;
+}
+
+.p3{
+    font-size: 130%;
+    margin-left: 10px;
+}
+
+.p4{
+    font-size: 130%;
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.p5{
+    margin-left: 20px;
+    margin-top: -14px;
+}
+
+.Button2{
+    height: 45px;
+    width: 90%;
+    margin-left: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+
+.effect{
+   font-size:11 ;
+    margin-left:25 ;
+    margin-top:0 ;
+}
+/* style={{fontSize:11,marginLeft:25,marginTop:0}} */
