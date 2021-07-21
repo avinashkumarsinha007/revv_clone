@@ -7,8 +7,7 @@ import Button from '@material-ui/core/Button';
 
 
 export const Product = () => {
-    const [state, setState] = React.useState();
-       
+        
       
     return (
         <>           
@@ -17,42 +16,42 @@ export const Product = () => {
                 <h1 className={styles.header1}>Maruti Alto 800</h1>
                 </div>
                 <h2 className={styles.header2}>Subscription Tenure</h2>
-                <Grid container spacing={2} style={{padding:20,marginTop:-25}}>
+                <Grid container spacing={1} style={{padding:25,marginTop:-30}}>
                     <Grid item xs={2} >
-                        <Paper onClick={""} name="1" className={styles.paper}>                         
+                        <Paper  className={styles.paper}> 
                             <span><img className={styles.image1} alt="icon" src="https://www.revv.co.in/grapheneImages/PDP/flash.svg"/></span>   
                             <span style={{ fontWeight: "bold",marginLeft:15 }}>1</span><br />
                             <span>Month</span>
                         </Paper>
                     </Grid>
                     <Grid item xs={2} >
-                    <Paper onClick={""} name="2" className={styles.paper}>                         
+                    <Paper onClick={""} name="value2" className={styles.paper}>                         
                             <span><img className={styles.image1} alt="icon" src="https://www.revv.co.in/grapheneImages/PDP/flash.svg"/></span>   
                             <span style={{ fontWeight: "bold",marginLeft:15 }}>3</span><br />
                             <span>Month</span>
                         </Paper>
                     </Grid>
                     <Grid item xs={2} >
-                    <Paper onClick={""} name="3" className={styles.paper}>                         
+                    <Paper onClick={""} name="value3" className={styles.paper}>                         
                             <span><img className={styles.image1} alt="icon" src="https://www.revv.co.in/grapheneImages/PDP/flash.svg"/></span>   
                             <span style={{ fontWeight: "bold",marginLeft:15 }}>6</span><br />
                             <span>Month</span>
                         </Paper>
                     </Grid>
                     <Grid item xs={2} >
-                    <Paper onClick={""} name="4" className={styles.paper}>                         
+                    <Paper onClick={""} name="value4" className={styles.paper}>                         
                             <span style={{ fontWeight: "bold" }}>12</span><br />
                             <span>Month</span>
                         </Paper>
                     </Grid>
                     <Grid item xs={2} >
-                    <Paper onClick={""} name="5" className={styles.paper}>                         
+                    <Paper onClick={""} name="value5" className={styles.paper}>                         
                             <span style={{ fontWeight: "bold"}}>24</span><br />
                             <span>Month</span>
                         </Paper>
                     </Grid>
                     <Grid item xs={2} >
-                    <Paper onClick={""} name="6" className={styles.paper}>                         
+                    <Paper onClick={""} name="value6" className={styles.paper}>                         
                             <span style={{ fontWeight: "bold" }}>36</span><br />
                             <span>Month</span>
                         </Paper>
@@ -67,8 +66,7 @@ export const Product = () => {
                     <Grid item xs={6}>
                         <p style={{marginBottom:3}}>Expected date of delivery</p>
                         <div style={{display:"flex"}}>
-                        <img style={{marginTop:-7,width:10}} src="https://www.revv.co.in/grapheneImages/PDP/flash.svg" alt="icon"/>
-                        <p style={{marginTop:0,marginLeft:5,fontSize:13,fontWeight:"bold"}}>Between 24th and 25th jul</p>
+                        <p style={{marginTop:0,marginLeft:0,fontSize:13,fontWeight:"bold"}}>Between 24th and 25th jul</p>
                         </div>
                     </Grid>
                     <Grid item xs={6}>
@@ -76,8 +74,11 @@ export const Product = () => {
                         <p style={{marginTop:0,fontSize:13,fontWeight:"bold"}}>At your doorstep</p>
                     </Grid>
                 </Grid>
-                <p style={{fontSize:11,marginLeft:25,marginTop:0}}>Due to high demand, delivery timelines may be impacted</p>
-                <div style={{marginLeft:25}}>
+                <div style={{display:"flex"}}>
+                <img style={{marginTop:-7,width:10,marginLeft:30}} src="https://www.revv.co.in/grapheneImages/PDP/flash.svg" alt="icon"/>
+                <p  style={{fontSize:11,marginTop:0,marginLeft:5,color:"#c9b410"}}><span className={styles.effect1}>Due to high demand, delivery timelines may be impacted</span></p>
+                </div>
+                <div style={{ marginLeft: 25 }}>
                     <img src="https://www.revv.co.in/grapheneImages/PDP/green-tick-icon.svg" alt="tick" />
                    <span style={{marginLeft:"8%",fontSize:15}}> Extend anytime at normal prices</span><span style={{marginLeft:"21%",color:"#1caba2",cursor:"pointer"}}><u onClick={""}>Details</u></span>
                 </div>
@@ -85,7 +86,7 @@ export const Product = () => {
                     <img src="https://www.revv.co.in/grapheneImages/PDP/green-tick-icon.svg" alt="tick" />
                     <span style={{marginLeft:"8%",fontSize:15}}> Return anytime, Just pay fee difference</span><span style={{ marginLeft: "12%", color:"#1caba2",cursor:"pointer"}}><u onClick={""}>Details</u></span>
                 </div>
-                <Button className={styles.Button2} variant="outlined">
+                <Button style={{marginLeft:"25px"}} className={styles.Button2} variant="outlined">
                     <img src="https://www.revv.co.in/grapheneImages/PDP/call-icon.svg" alt="call"/>
                     <span style={{ marginLeft: 10, marginRight: 10, color:"#1caba2"}}>Dial </span><span style={{marginRight:10,fontWeight:"bold"}}>8860003555</span>  <span style={{color:"#1caba2"}}>to get to us</span>
                 </Button>
