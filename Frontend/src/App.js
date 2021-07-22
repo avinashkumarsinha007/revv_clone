@@ -7,7 +7,7 @@ function App() {
     <div>
      <CarouselBanner/>
      <hr/>
-     {/* <CarouselBannerOpen/> */}
+     <CarouselBannerOpen/>
      
     </div>
   );
