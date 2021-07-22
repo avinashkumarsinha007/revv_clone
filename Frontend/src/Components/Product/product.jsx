@@ -60,7 +60,7 @@ export const Product = () => {
                 <p style={{marginTop:0}}><span className={styles.p1}>₹ 14,399</span><span className={styles.p2}>/month</span><s className={styles.p3}>₹16,000</s><span className={styles.p4}>(10% Off)</span></p>
                 <p className={styles.p5}>(Inclusive of taxes)</p>
                 <div  className={styles.Button1}>
-                    <p style={{paddingTop:16}}><span style={{color:"white",fontSize:18,marginLeft:"40%"}}>Proceed ></span></p>
+                    <p style={{paddingTop:16}}><span style={{color:"white",fontSize:18,marginLeft:"40%"}}>{`Proceed >`}</span></p>
                 </div>
                 <Grid container spacing={2} style={{marginLeft:25,fontSize: "12.5px"}}>
                     <Grid item xs={6}>
