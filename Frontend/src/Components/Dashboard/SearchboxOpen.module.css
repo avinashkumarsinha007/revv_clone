@@ -1,7 +1,6 @@
 .SearchBox {
     position: absolute;
     width: 40%;
-    height: 65%;
     max-width: 500px;
     max-height: 500px;
     background-color: white;
@@ -48,6 +47,7 @@
     margin-top: 5%;
     text-align: center;
     width: 100%;
+
 }
 .SearchBox__Submit > button {
     padding: 0;
@@ -56,6 +56,7 @@
     background-color: white;
     box-shadow: 0 0 10px grey;
     width: 50%;
+    margin:2%;
 }
   
 .SearchBox__Submit > button > p {

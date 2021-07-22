@@ -5,7 +5,7 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogTitle from "@material-ui/core/DialogTitle";
 // import { useDispatch } from "react-redux";
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 const cities = [
   {
     value: "Delhi-NCR",
@@ -40,7 +40,7 @@ const cities = [
 function Searchbox() {
   const [city, setCity] = React.useState("Delhi-NCR");
   const [open, setOpen] = React.useState(false);
-  // const history = useHistory();
+  const history = useHistory();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -54,7 +54,7 @@ function Searchbox() {
       <div className={style.SearchBox__TopRow}>
         <button
           style={{
-            width: "30%",
+            width: 180,
             margin: "1%",
             fontSize: "18px",
             fontWeight: "bold",
@@ -65,14 +65,14 @@ function Searchbox() {
             boxShadow: "0 0 2px",
           }}
           onClick={() => {
-            // history.push("/");
+            history.push("/");
           }}
         >
           Rentals
         </button>
         <button
           style={{
-            width: "30%",
+            width: 180,
             margin: "1%",
             fontSize: "18px",
             fontWeight: "bold",
@@ -130,15 +130,23 @@ function Searchbox() {
           {city}
         </Button>
       </div>
+      {/* <div className={style.SearchBox__TopRow}>
+      </div> */}
 
       <div className={style.SearchBox__Submit}>
       {/* <button onClick={() => history.push(`/subscription/${city}`)}> */}
-      <button>
+      <button onClick={() => history.push(`/subscription/${city}`)}>
           <button>Search by the month</button>
           <p>
           For 1, 3 &amp; 6 months
           </p>
-        </button>
+      </button>
+      <button onClick={() => history.push(`/subscription/${city}`)}>
+          <button>Search by the Year</button>
+          <p>
+          For 1, 2 &amp; 3 years
+          </p>
+      </button>
       </div>
     </div>
   );

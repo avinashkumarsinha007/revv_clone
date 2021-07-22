@@ -1,6 +1,7 @@
 .SearchBox {
     position: absolute;
     width: 40%;
+    
     max-width: 500px;
     max-height: 500px;
     background-color: white;

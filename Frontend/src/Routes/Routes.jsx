@@ -1,12 +1,17 @@
 import React from "react";
 import {Switch,Route} from "react-router-dom"
+import Dashboard from "../Pages/Home/Dashboard";
+import Open from "../Pages/Home/Open";
 
 export const Router = () => {
   
     return(
     <Switch>
         <Route exact path="/">
-            home
+            <Dashboard/>
+        </Route>
+        <Route exact path="/open">
+            <Open/>
         </Route>
         <Route exact path="/open/:city">
             Subscription
