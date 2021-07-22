@@ -17,14 +17,14 @@ export default function CarsDisplayCard() {
                 icon
                 src="https://www.revv.co.in/grapheneImages/CarsAndPricing/transmission-icon.svg"
               />
-              <Text>Petrol</Text>
+              <Text icon>Petrol</Text>
             </Section>
             <Section icon>
               <Image
                 icon
                 src="https://www.revv.co.in/grapheneImages/CarsAndPricing/automatic-icon.svg"
               />
-              <Text>Manual</Text>
+              <Text icon>Manual</Text>
             </Section>
           </Section>
         </Section>
