@@ -56,7 +56,7 @@ export const SecondaryCustomCard = styled.div`
     padding-bottom: 1.5%;
     border-radius:5px;
     background: white;
-    margin-top:5%;
+    margin-top:-0.5%;
     box-shadow: 0 0 10px grey;
     & label:nth-child(2) {
         font-weight: bold;
