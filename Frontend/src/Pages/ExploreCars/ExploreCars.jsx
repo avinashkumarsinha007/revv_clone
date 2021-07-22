@@ -1,11 +1,12 @@
 import React from "react";
-import CarsDisplayCard from "../Components/ExploreCars/CarsDisplayCard";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import { Checkbox, TextField } from "@material-ui/core";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
+import { Checkbox, TextField, FormControlLabel } from "@material-ui/core";
+// import FormControlLabel from "@material-ui/core/FormControlLabel";
 import { withStyles } from "@material-ui/core/styles";
 import { teal } from "@material-ui/core/colors";
 
+import { Section, Text } from "./exploreCars.styledComponent";
+import CarsDisplayCard from "../../Components/ExploreCars/CarsDisplayCard";
 const GreenCheckbox = withStyles({
   root: {
     "&$checked": {
@@ -38,25 +39,17 @@ export default function ExploreCars() {
     setCheckbox({ ...checkbox, [event.target.name]: event.target.checked });
   };
 
-  console.log(checkbox);
-
   return (
-    <div style={{ display: "flex", padding: "20px 100px" }}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          flexBasis: "30%",
-        }}
-      >
-        <h3>Filter By</h3>
-        <p>City</p>
+    <Section outerLayout>
+      <Section searchColumn>
+        <Text title>Filter By</Text>
+        <Text city>City</Text>
         <Autocomplete
           options={cities}
           style={{ width: 300 }}
           renderInput={(params) => <TextField {...params} label="cities" />}
         />
-        <p>search</p>
+        <Text city>search</Text>
         <Autocomplete
           value={searchValue}
           onChange={(event, newValue) => {
@@ -73,7 +66,7 @@ export default function ExploreCars() {
             />
           )}
         />
-        <p>segment</p>
+        <Text city>segment</Text>
         <FormControlLabel
           control={
             <GreenCheckbox
@@ -104,7 +97,7 @@ export default function ExploreCars() {
           }
           label="SUV/MUV"
         />
-        <p>Fuel</p>
+        <Text city>Fuel</Text>
         <FormControlLabel
           control={
             <GreenCheckbox
@@ -125,7 +118,7 @@ export default function ExploreCars() {
           }
           label="Petrol"
         />
-        <p>Transmission</p>
+        <Text city>Transmission</Text>
         <FormControlLabel
           control={
             <GreenCheckbox
@@ -146,7 +139,7 @@ export default function ExploreCars() {
           }
           label="Manual"
         />
-        <p>Brand</p>
+        <Text city>Brand</Text>
         {carBrands.map((item) => {
           return (
             <FormControlLabel
@@ -161,16 +154,9 @@ export default function ExploreCars() {
             />
           );
         })}
-      </div>
-      <div
-        style={{
-          display: "flex",
-          padding: "20px",
-          flexDirection: "column",
-          flexBasis: "70%",
-        }}
-      >
-        <h2>36 cars for subscription in Bangalore</h2>
+      </Section>
+      <Section carsColumn>
+        <Text titleColumn2>36 cars for subscription in Bangalore</Text>
         <CarsDisplayCard />
         <br />
         <CarsDisplayCard />
@@ -180,7 +166,7 @@ export default function ExploreCars() {
         <CarsDisplayCard />
         <br />
         <CarsDisplayCard />
-      </div>
-    </div>
+      </Section>
+    </Section>
   );
 }
