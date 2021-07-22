@@ -222,5 +222,4 @@ function Searchbox() {
         </div>
     );
 }
-
 export default Searchbox;
