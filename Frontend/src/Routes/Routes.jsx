@@ -1,12 +1,14 @@
 import React from "react";
 import {Switch,Route} from "react-router-dom"
-
+import { Product } from "../components/Product/product";
+import LoggedInNavbar from "../components/LoggedInNavbar"
 export const Router = () => {
   
     return(
     <Switch>
         <Route exact path="/">
-            home
+                <LoggedInNavbar/>
+                <Product/>
         </Route>
         <Route exact path="/open/:city">
             Subscription

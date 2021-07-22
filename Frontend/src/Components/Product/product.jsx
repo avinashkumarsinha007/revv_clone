@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { CustomCard } from "../CardComponents/CustomCard";
 import styles from "./product.module.css";
 import Paper from '@material-ui/core/Paper';
@@ -7,8 +7,17 @@ import Button from '@material-ui/core/Button';
 
 
 export const Product = () => {
-        
-      
+    const [state, setState] = useState({1:3     
+    })
+    const useref = React.useRef({
+        value1: true,
+        value2: false
+    });
+    const handleChange = (e) => {
+        setState(e.target)
+        console.log(e.target.index)
+        console.log(useref.current.index)
+    }
     return (
         <>           
             <CustomCard type="secondary">               
@@ -18,11 +27,13 @@ export const Product = () => {
                 <h2 className={styles.header2}>Subscription Tenure</h2>
                 <Grid container spacing={1} style={{padding:25,marginTop:-30}}>
                     <Grid item xs={2} >
-                        <Paper  className={styles.paper}> 
+                        <div>
+                        <Paper ref={useref} index={0} onClick={handleChange} className={styles.paper}> 
                             <span><img className={styles.image1} alt="icon" src="https://www.revv.co.in/grapheneImages/PDP/flash.svg"/></span>   
                             <span style={{ fontWeight: "bold",marginLeft:15 }}>1</span><br />
                             <span>Month</span>
-                        </Paper>
+                            </Paper>
+                        </div>
                     </Grid>
                     <Grid item xs={2} >
                     <Paper onClick={""} name="value2" className={styles.paper}>                         
