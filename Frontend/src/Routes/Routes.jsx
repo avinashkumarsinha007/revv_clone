@@ -9,6 +9,8 @@ export const Router = () => {
     <Switch>
         <Route exact path="/">
             <Dashboard/>
+            {/* <LoggedInNavbar/>
+            <Product/> */}
         </Route>
         <Route exact path="/open">
             <Open/>
@@ -25,6 +27,6 @@ export const Router = () => {
         <Route>
             Error 404! you have reach the end of the web.
         </Route>
-        </Switch>
+    </Switch>
     )
 }
