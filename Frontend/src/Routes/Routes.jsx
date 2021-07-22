@@ -1,14 +1,19 @@
 import React from "react";
 import {Switch,Route} from "react-router-dom"
-import { Product } from "../components/Product/product";
-import LoggedInNavbar from "../components/LoggedInNavbar"
+import Dashboard from "../Pages/Home/Dashboard";
+import Open from "../Pages/Home/Open";
+
 export const Router = () => {
   
     return(
     <Switch>
         <Route exact path="/">
-                <LoggedInNavbar/>
-                <Product/>
+            <Dashboard/>
+            {/* <LoggedInNavbar/>
+            <Product/> */}
+        </Route>
+        <Route exact path="/open">
+            <Open/>
         </Route>
         <Route exact path="/open/:city">
             Subscription
@@ -22,6 +27,6 @@ export const Router = () => {
         <Route>
             Error 404! you have reach the end of the web.
         </Route>
-        </Switch>
+    </Switch>
     )
 }
