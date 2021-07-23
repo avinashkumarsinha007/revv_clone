@@ -45,6 +45,8 @@ const Text = styled.p`
       : props.city
       ? "rgba(27, 28, 36, 0.8)"
       : null};
+  margin-top: 10px;
+  margin-bottom: 0px;
 `;
 
 export { Section, Text };
