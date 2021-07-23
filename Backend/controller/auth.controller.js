@@ -8,15 +8,15 @@ const createToken = (user) => {
 }
 
 const register = async(req,res) => {
-    const user = await User.findOne({ email: req.body.email }).exec();
-    if (user) return res.status(400).send({ status: "failed", message: "User already exist" });
-    user = User.create(req.body);
-    const token = createToken(req.body);
+    let user = await User.findOne({ email: req.body.email }).exec();
+    if (user) return res.status(400).send({ status: "failed", message: "User already exist with this email id" });
+    user = await User.create(req.body);
+    let token = createToken(req.body);
     return res.status(200).json({ user: user, token: token });
 }
 
 const login = async (req, res) => {
-    const user = await User.findOne({ email: req.body.email }).exec();
+    let user = await User.findOne({ email: req.body.email }).exec();
     if (!user) return res.status(400).send({ status: "failed", message: "user does not exist" });
     const match = user.matchPassword(req.body.password);
     if (!match) return res.status(400).send({ status: "failed", message: "please enter correct email and password" });
