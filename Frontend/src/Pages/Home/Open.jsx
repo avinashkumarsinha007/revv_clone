@@ -6,17 +6,19 @@ import Featured from "../../Components/Dashboard/Featured";
 import HowItWorks from "../../Components/Dashboard/HowItWorks";
 import SubscriptionBenefits from "../../Components/Dashboard/SubscriptionBenefits";
 import Testimonials from "../../Components/Dashboard/TestimonialsOpen";
+import Navbar from "../../Components/Navbar/Navbar";
 
 function Open() {
   return (
     <div>
-      <CarouselBannerOpen/>
-      <SubscriptionBenefits/>
-      <HowItWorks/>
-      <FAQ/>
-      <Comparision/>
-      <Testimonials/>
-      <Featured/>
+      <Navbar />
+      <CarouselBannerOpen />
+      <SubscriptionBenefits />
+      <HowItWorks />
+      <FAQ />
+      <Comparision />
+      <Testimonials />
+      <Featured />
     </div>
   );
 }
