@@ -1,5 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
+import Login from "../Components/Auth/Login";
+import Signup from "../Components/Auth/Signup";
 import ExploreCars from "../Pages/ExploreCars/ExploreCars";
 import Dashboard from "../Pages/Home/Dashboard";
 import Open from "../Pages/Home/Open";
@@ -15,6 +17,9 @@ export const Router = () => {
       </Route>
       <Route exact path="/open/:city">
         Subscription
+      </Route>
+      <Route path = "/login">
+        <Login />
       </Route>
       <Route exact path="/explorecars">
         <ExploreCars />
