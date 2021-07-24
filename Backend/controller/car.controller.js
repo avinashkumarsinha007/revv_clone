@@ -3,15 +3,30 @@ const Car = require("../models/Car.model");
 
 const router = express.Router();
 
-// use http://localhost:4000/cars?city=Delhi-NCR to filter by city name
+// use http://localhost:4000/cars?location=Delhi-NCR to filter by city name
 //
 
 router.get("/", async (req, res) => {
-    const data = req.query.city;
-    const obj = data == !undefined ? { location: `${data}` } : {};
+    
+    let obj = {};
+   
+    let { location, segment, name, fuel_type, transmission_type, brand, seating_capacity,gte,lte } = req.query;
+    location ? obj.location = location : null;
+    segment ? obj.segment = segment : null;
+    name ? obj.name = name : null;
+    fuel_type ? obj.fuel_type = fuel_type: null;
+    transmission_type ? obj.transmission_type = transmission_type : null;
+    brand ? obj.brand = brand : null;
+    seating_capacity ? obj.seating_capacity = seating_capacity : null;
+    let obj1 = {};
+    // let subscribe_charge_per_month = undefined;
+    // {$and:[{subscribe_charge_per_month:{$lt:40000}},{subscribe_charge_per_month:{$gt:2000}}]}
+    // gte? 
+    // console.log(req.query)
+
     try
     {
-        const car = await Car.find(obj).lean().exec();
+        const car = await Car.find(obj,obj1).lean().exec();
         res.status(200).json({ car: car });
     }
     catch
