@@ -4,7 +4,7 @@ const Car = require("../models/Car.model");
 const router = express.Router();
 
 // use http://localhost:4000/cars?location=Delhi-NCR to filter by city name
-//
+
 
 router.get("/", async (req, res) => {
     
@@ -23,7 +23,7 @@ router.get("/", async (req, res) => {
     {
         obj1 = {$and:[{subscribe_charge_per_month:{$lte:lte}},{subscribe_charge_per_month:{$gte:gte}}]}
     }
-    
+
     try
     {
         const car = await Car.find(obj,obj1).lean().exec();
