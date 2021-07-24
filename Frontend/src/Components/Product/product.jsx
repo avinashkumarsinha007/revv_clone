@@ -1,23 +1,57 @@
-import React, { useState } from "react";
+import React from "react";
 import { CustomCard } from "../CardComponents/CustomCard";
 import styles from "./product.module.css";
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
+import { ProductBox } from "./productBox";
 
-
-export const Product = () => {
-    const [state, setState] = useState({1:3     
-    })
-    const useref = React.useRef({
-        value1: true,
-        value2: false
-    });
-    const handleChange = (e) => {
-        setState(e.target)
-        console.log(e.target.index)
-        console.log(useref.current.index)
+const arr = [
+    {
+        img: "https://www.revv.co.in/grapheneImages/PDP/flash.svg",
+        message: "1",
+        class: styles.paper,
+        id:1
+    },
+    {
+        img: "https://www.revv.co.in/grapheneImages/PDP/flash.svg",
+        message: "3",
+        class: styles.paper,
+        id:2
+    },
+    {
+        img: "https://www.revv.co.in/grapheneImages/PDP/flash.svg",
+        message: "6",
+        class: styles.paper,
+        id:3
+    },
+    {
+        img: null,
+        message: "12",
+        class: styles.paper,
+        id:4
+    },
+    {
+        img: null,
+        message: "24",
+        class: styles.paper,
+        id:5
+    },
+    {
+        img: null,
+        message: "36",
+        class: styles.paper,
+        id:6
     }
+]
+export const Product = () => {
+    const [state, setState] = React.useState(arr);
+
+    const handleClick = (id) => {
+        
+        const updatedArr = state.map(el => el.id === id ? { ...el, class: styles.paper1 } : { ...el, class: styles.paper });
+        setState(updatedArr);
+    }
+
     return (
         <>           
             <CustomCard type="secondary">               
@@ -25,48 +59,12 @@ export const Product = () => {
                 <h1 className={styles.header1}>Maruti Alto 800</h1>
                 </div>
                 <h2 className={styles.header2}>Subscription Tenure</h2>
-                <Grid container spacing={1} style={{padding:25,marginTop:-30}}>
-                    <Grid item xs={2} >
-                        <div>
-                        <Paper ref={useref} index={0} onClick={handleChange} className={styles.paper}> 
-                            <span><img className={styles.image1} alt="icon" src="https://www.revv.co.in/grapheneImages/PDP/flash.svg"/></span>   
-                            <span style={{ fontWeight: "bold",marginLeft:15 }}>1</span><br />
-                            <span>Month</span>
-                            </Paper>
-                        </div>
-                    </Grid>
-                    <Grid item xs={2} >
-                    <Paper onClick={""} name="value2" className={styles.paper}>                         
-                            <span><img className={styles.image1} alt="icon" src="https://www.revv.co.in/grapheneImages/PDP/flash.svg"/></span>   
-                            <span style={{ fontWeight: "bold",marginLeft:15 }}>3</span><br />
-                            <span>Month</span>
-                        </Paper>
-                    </Grid>
-                    <Grid item xs={2} >
-                    <Paper onClick={""} name="value3" className={styles.paper}>                         
-                            <span><img className={styles.image1} alt="icon" src="https://www.revv.co.in/grapheneImages/PDP/flash.svg"/></span>   
-                            <span style={{ fontWeight: "bold",marginLeft:15 }}>6</span><br />
-                            <span>Month</span>
-                        </Paper>
-                    </Grid>
-                    <Grid item xs={2} >
-                    <Paper onClick={""} name="value4" className={styles.paper}>                         
-                            <span style={{ fontWeight: "bold" }}>12</span><br />
-                            <span>Month</span>
-                        </Paper>
-                    </Grid>
-                    <Grid item xs={2} >
-                    <Paper onClick={""} name="value5" className={styles.paper}>                         
-                            <span style={{ fontWeight: "bold"}}>24</span><br />
-                            <span>Month</span>
-                        </Paper>
-                    </Grid>
-                    <Grid item xs={2} >
-                    <Paper onClick={""} name="value6" className={styles.paper}>                         
-                            <span style={{ fontWeight: "bold" }}>36</span><br />
-                            <span>Month</span>
-                        </Paper>
-                    </Grid>
+                <Grid container spacing={1} style={{ padding: 25, marginTop: -30 }}>
+                    {
+                        state.map((el) => {
+                            return <ProductBox handleClick={handleClick} key={el.id} el={el}/>
+                        })
+                    }
                 </Grid>
                 <p style={{marginTop:0}}><span className={styles.p1}>₹ 14,399</span><span className={styles.p2}>/month</span><s className={styles.p3}>₹16,000</s><span className={styles.p4}>(10% Off)</span></p>
                 <p className={styles.p5}>(Inclusive of taxes)</p>
