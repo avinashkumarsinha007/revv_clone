@@ -89,11 +89,11 @@ export const Product = () => {
                 </div>
                 <div style={{ marginLeft: 25 }}>
                     <img src="https://www.revv.co.in/grapheneImages/PDP/green-tick-icon.svg" alt="tick" />
-                   <span style={{marginLeft:"8%",fontSize:15}}> Extend anytime at normal prices</span><span style={{marginLeft:"21%",color:"#1caba2",cursor:"pointer"}}><u onClick={""}>Details</u></span>
+                   <span style={{marginLeft:"5%",fontSize:15}}> Extend anytime at normal prices</span><span style={{marginLeft:"25%",color:"#1caba2",cursor:"pointer"}}><u onClick={""}>Details</u></span>
                 </div>
-                <div style={{marginLeft:25,marginBottom:20}}>
+                <div style={{marginLeft:25,marginBottom:20,marginTop:10}}>
                     <img src="https://www.revv.co.in/grapheneImages/PDP/green-tick-icon.svg" alt="tick" />
-                    <span style={{marginLeft:"8%",fontSize:15}}> Return anytime, Just pay fee difference</span><span style={{ marginLeft: "12%", color:"#1caba2",cursor:"pointer"}}><u onClick={""}>Details</u></span>
+                    <span style={{marginLeft:"5%",fontSize:15}}> Return anytime, Just pay fee difference</span><span style={{ marginLeft: "15%", color:"#1caba2",cursor:"pointer"}}><u onClick={""}>Details</u></span>
                 </div>
                 <Button style={{marginLeft:"25px"}} className={styles.Button2} variant="outlined">
                     <img src="https://www.revv.co.in/grapheneImages/PDP/call-icon.svg" alt="call"/>

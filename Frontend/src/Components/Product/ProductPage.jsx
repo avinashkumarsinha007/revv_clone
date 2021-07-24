@@ -1,9 +1,8 @@
 import React from "react";
 import Carousel from "react-material-ui-carousel";
+import { Product } from "./product";
 import styles from "./product.module.css";
-import { ProductPage2 } from "./ProductPage2";
 import { SmallCard } from "./smallCard";
-
 
 function Item(props) {
   return (
@@ -60,7 +59,8 @@ export const ProductPage = () => {
     ]
   return (
     <>
-      <div style={{ width: "44vw" ,textAlign:"center",marginLeft:"12%"}}>
+      
+      <div  style={{ width: "44vw" ,textAlign:"center",marginLeft:"12%"}}>
         <Carousel
           // IndicatorIcon="prev" // Previous Example
           animation="slide"
@@ -89,16 +89,16 @@ export const ProductPage = () => {
           {items.map((item, i) => (
             <Item key={i} item={item} />
           ))}
-              </Carousel>
+        </Carousel>
               <div className={styles.container10}>
                   {items2.map((e,i) => {
                       return <SmallCard key={i} item={e}/>
                 })}
              </div>
-          </div>
-          <div>
-          <ProductPage2/>
-          </div>
+      </div>
+      <div style={{marginTop:"-28.5%",position:"static"}}>
+         <Product/>
+      </div>
     </>
   );
 };

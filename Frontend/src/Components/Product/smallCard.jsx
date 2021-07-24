@@ -12,15 +12,31 @@ export const SmallCard = ({ item }) => {
             <p className={styles.pTag2}>{item.description}</p>
             </div>
         </>
+    ) 
+}
+
+export const SmallCards = ({ item }) => {
+    console.log(item)
+    return (
+        <>
+            <div style={{width:"350px"}}>
+            <img  src={item.link} alt="icon"/>
+            <p className={styles.pTag6}>{item.message}</p>
+            <p className={styles.pTag7}>{item.limit}</p>
+            </div>
+        </>
     )
 }
 
-export const SmallCards = (item) => {
+export const SmallCards1 = ({ item }) => {
+    console.log(item)
     return (
         <>
-            <img  src={item.img} alt="icon"/>
-            <p>{item.name}</p>
-            <p>{ item.description}</p>
+            <div style={{width:"350px"}}>
+            <img  src={item.link} alt="icon"/>
+            <p style={{color:"white"}} className={styles.pTag6}>{item.message}</p>
+            <p style={{color:"white"}} className={styles.pTag7}>{item.limit}</p>
+            </div>
         </>
     )
 }
