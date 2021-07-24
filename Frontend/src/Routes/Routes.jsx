@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-
+import { PrivateRoute } from "./PrivateRoute";
 import ExploreCars from "../Pages/ExploreCars/ExploreCars";
 import Dashboard from "../Pages/Home/Dashboard";
 import Open from "../Pages/Home/Open";
