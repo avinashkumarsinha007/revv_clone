@@ -4,7 +4,7 @@ const Car = require("../models/Car.model");
 const router = express.Router();
 
 // use http://localhost:4000/cars?location=Delhi-NCR to filter by city name
-//
+
 
 router.get("/", async (req, res) => {
     
@@ -19,10 +19,10 @@ router.get("/", async (req, res) => {
     brand ? obj.brand = brand : null;
     seating_capacity ? obj.seating_capacity = seating_capacity : null;
     let obj1 = {};
-    // let subscribe_charge_per_month = undefined;
-    // {$and:[{subscribe_charge_per_month:{$lt:40000}},{subscribe_charge_per_month:{$gt:2000}}]}
-    // gte? 
-    // console.log(req.query)
+    if (gte && lte)
+    {
+        obj1 = {$and:[{subscribe_charge_per_month:{$lte:lte}},{subscribe_charge_per_month:{$gte:gte}}]}
+    }
 
     try
     {
