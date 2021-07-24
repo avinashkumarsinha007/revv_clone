@@ -9,7 +9,8 @@ const carSchema = new mongoose.Schema({
     seating_capacity: { type: Number, required: true },
     subscribe_charge_per_month:{ type: Number, required: true },
     rental_charge_per_km:{ type: Number, required: true },
-    image_url:[{ type: String, required: true }],
+    image_url: [{ type: String, required: true }],
+    location:{}
 }, {
     timestamps: true,
     versionKey: false
