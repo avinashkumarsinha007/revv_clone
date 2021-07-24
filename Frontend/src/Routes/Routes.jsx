@@ -2,6 +2,7 @@ import React from "react";
 import {Switch,Route} from "react-router-dom"
 import Dashboard from "../Pages/Home/Dashboard";
 import Open from "../Pages/Home/Open";
+import Profile from "../Pages/Profile/Profile";
 
 export const Router = () => {
   
@@ -23,6 +24,9 @@ export const Router = () => {
         </Route>
         <Route path="/open/:city/:car/:model">
             product page
+        </Route>
+        <Route exact path="/profile">
+          <Profile/>
         </Route>
         <Route>
             Error 404! you have reach the end of the web.
