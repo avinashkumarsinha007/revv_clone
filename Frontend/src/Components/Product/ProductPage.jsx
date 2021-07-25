@@ -3,36 +3,33 @@ import Carousel from "react-material-ui-carousel";
 import { Product } from "./product";
 import styles from "./product.module.css";
 import { SmallCard } from "./smallCard";
+import { useSelector } from "react-redux";
+import Skeleton from '@material-ui/lab/Skeleton';
 
 function Item(props) {
+  const  isLoading= useSelector(state => state.singleCar.isLoading);
+
   return (
       <div>
       <div><img className={styles.stdiv} src="https://www.revv.co.in/grapheneImages/PDP/product-images/less-than-3-years-old.png" alt="icon"/></div>
-        <img src={ props.item.img} alt="icon"/>
+      {isLoading?<Skeleton variant="rect" width={310} height={218} />:<img src={props.item.img} alt="icon" />}
     </div>
   );
 }
-export const ProductPage = () => {
-  var items = [
+export const ProductPage = ({ carsData }) => {
+  
+     var items = [
     {
-      name: "Random Name #1",
-      description: "Probably the most random thing you have ever seen!",
-      img:"https://lt-car-images.s3.ap-south-1.amazonaws.com/Maruti%20Alto%20K10/Front%20right.jpg"
+      img:`${carsData?.image_url?carsData?.image_url[1]:null}`
     },
     {
-      name: "Random Name #2",
-        description: "Hello World!",
-      img:"https://lt-car-images.s3.ap-south-1.amazonaws.com/Maruti%20Alto%20K10/Front.jpg"
+      img:`${carsData?.image_url?carsData?.image_url[1]:null}`
       },
       {
-        name: "Random Name #2",
-          description: "Hello World!",
-        img:"https://lt-car-images.s3.ap-south-1.amazonaws.com/Maruti%20Alto%20K10/Side.jpg"
+        img:`${carsData?.image_url?carsData?.image_url[1]:null}`
       },
       {
-        name: "Random Name #2",
-          description: "Hello World!",
-        img:"https://lt-car-images.s3.ap-south-1.amazonaws.com/Maruti%20Alto%20K10/Back_Backleft,right.jpg"
+        img:`${carsData?.image_url?carsData?.image_url[1]:null}`
       }
     ];
     let items2 = [
@@ -97,7 +94,7 @@ export const ProductPage = () => {
              </div>
       </div>
       <div style={{marginTop:"-28.5%",position:"static"}}>
-         <Product/>
+        <Product carsData={carsData}/>
       </div>
     </>
   );

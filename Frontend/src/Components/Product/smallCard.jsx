@@ -16,7 +16,7 @@ export const SmallCard = ({ item }) => {
 }
 
 export const SmallCards = ({ item }) => {
-    console.log(item)
+    // console.log(item)
     return (
         <>
             <div style={{width:"350px"}}>
@@ -29,7 +29,7 @@ export const SmallCards = ({ item }) => {
 }
 
 export const SmallCards1 = ({ item }) => {
-    console.log(item)
+    // console.log(item)
     return (
         <>
             <div style={{width:"350px"}}>
