@@ -17,6 +17,7 @@
   .SearchBox > h2 {
     color: black;
   }
+  
   .SearchBox__TopRow {
     display: flex;
     justify-content: space-evenly;

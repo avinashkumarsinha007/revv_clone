@@ -89,14 +89,15 @@ import {
   const getUser = (payload) => (dispatch) => {
     dispatch(authUserRequest);
     axios
-      .get(`http://localhost:4000/users`)
+      .post(`http://localhost:4000/users/login`)
       .then((res) => {
         const users = res.data;
-        for (let i = 0; i < users.length; i++) {
-          if (users[i]._id === payload) {
-            dispatch(authUserSuccess(users[i]));
-          }
-        }
+        dispatch(authUserSuccess(users));
+        // for (let i = 0; i < users.length; i++) {
+        //   if (users[i]._id === payload) {
+        //     dispatch(authUserSuccess(users[i]));
+        //   }
+        // }
       })
       .catch((err) => {
         dispatch(authUserFailure(err));

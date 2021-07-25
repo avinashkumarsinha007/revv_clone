@@ -102,6 +102,7 @@ function Searchbox() {
           }}
         >
           Rentals
+
         </button>
         <button
           style={{
@@ -112,6 +113,7 @@ function Searchbox() {
             height: "50px",
             borderRadius: "15px",
             border: "none",
+            
             backgroundColor: "transparent",
             boxShadow: "0 0 2px",
           }}
