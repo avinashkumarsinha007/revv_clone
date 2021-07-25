@@ -21,7 +21,7 @@ export const Router = () => {
       {/* <PrivateRoute path="/login">
         <Login />
       </PrivateRoute> */}
-{/* 
+      {/* 
       <PrivateRoute exact path="/open/:city/stock/car_pricing">
         shubham filter page
       </PrivateRoute> */}
@@ -33,7 +33,6 @@ export const Router = () => {
         <Profile />
       </PrivateRoute>
       <Route>Error 404! you have reach the end of the web.</Route>
-
     </Switch>
   );
 };
