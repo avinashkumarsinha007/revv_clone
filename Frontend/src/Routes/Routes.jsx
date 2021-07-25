@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import { PrivateRoute } from "./PrivateRoute";
+// import { Route } from "./Route";
 import ExploreCars from "../Pages/ExploreCars/ExploreCars";
 import Dashboard from "../Pages/Home/Dashboard";
 import Open from "../Pages/Home/Open";
@@ -15,23 +15,23 @@ export const Router = () => {
       <Route exact path="/open">
         <Open />
       </Route>
-      <PrivateRoute exact path="/open/:city">
-        Subscription
-      </PrivateRoute>
-      {/* <PrivateRoute path="/login">
+      <Route exact path="/ExploreCars/:city">
+      <ExploreCars />
+      </Route>
+      {/* <Route path="/login">
         <Login />
-      </PrivateRoute> */}
+      </Route> */}
 {/* 
-      <PrivateRoute exact path="/open/:city/stock/car_pricing">
+      <Route exact path="/open/:city/stock/car_pricing">
         shubham filter page
-      </PrivateRoute> */}
-      <PrivateRoute exact path="/explorecars">
+      </Route> */}
+      <Route exact path="/explorecars">
         <ExploreCars />
-      </PrivateRoute>
-      <PrivateRoute path="/open/:city/:car/:model">product page</PrivateRoute>
-      <PrivateRoute exact path="/profile">
+      </Route>
+      <Route path="/open/:city/:car/:model">product page</Route>
+      <Route exact path="/profile">
         <Profile />
-      </PrivateRoute>
+      </Route>
       <Route>Error 404! you have reach the end of the web.</Route>
 
     </Switch>

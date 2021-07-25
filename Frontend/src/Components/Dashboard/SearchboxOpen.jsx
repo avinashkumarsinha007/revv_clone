@@ -135,13 +135,13 @@ function Searchbox() {
 
       <div className={style.SearchBox__Submit}>
       {/* <button onClick={() => history.push(`/subscription/${city}`)}> */}
-      <button onClick={() => history.push(`/subscription/${city}`)}>
+      <button onClick={() => history.push(`/explorecars/${city}`)}>
           <button>Search by the month</button>
           <p>
           For 1, 3 &amp; 6 months
           </p>
       </button>
-      <button onClick={() => history.push(`/subscription/${city}`)}>
+      <button onClick={() => history.push(`/explorecars/${city}`)}>
           <button>Search by the Year</button>
           <p>
           For 1, 2 &amp; 3 years

@@ -61,7 +61,7 @@ import {
   const authUser = (payload) => (dispatch) => {
     dispatch(authUserRequest);
     axios
-      .get(`http://localhost:3000/users`)
+      .get(`http://localhost:4000/users`)
       .then((res) => {
         const users = res.data;
         let flag = true;
@@ -89,7 +89,7 @@ import {
   const getUser = (payload) => (dispatch) => {
     dispatch(authUserRequest);
     axios
-      .get(`http://localhost:3000/users`)
+      .get(`http://localhost:4000/users`)
       .then((res) => {
         const users = res.data;
         for (let i = 0; i < users.length; i++) {
@@ -106,7 +106,7 @@ import {
   const createUser = (payload) => (dispatch) => {
     dispatch(createUserRequest);
     axios
-      .post(`http://localhost:3000/users`, payload)
+      .post(`http://localhost:4000/users/register`, payload)
       .then((res) => {
         dispatch(createUserSuccess());
         dispatch(authUserSuccess(res.data));

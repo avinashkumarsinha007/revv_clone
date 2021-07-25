@@ -1,7 +1,9 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import { AuthReducer } from "./Auth/AuthReducer";
+import { dashboardreducer } from "./Dashboard/reducer";
 const rootReducer = combineReducers({
   auth: AuthReducer,
+  dashboard: dashboardreducer,
 });
 
 const customThunks = (store) => (next) => (action) => {
