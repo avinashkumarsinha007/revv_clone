@@ -19,24 +19,31 @@ export const Router = () => {
       <PrivateRoute exact path="/open/:city">
         Subscription
       </PrivateRoute>
+      <Route path = "/explorecars">
+        <ExploreCars />
+      </Route>
+      <Route path="/open/:city/:car/:model/:Id">
+        <SingleProduct />
+      </Route>
       {/* <PrivateRoute path="/login">
         <Login />
       </PrivateRoute> */}
-{/* 
+      {/* 
       <PrivateRoute exact path="/open/:city/stock/car_pricing">
         shubham filter page
       </PrivateRoute> */}
+
       <PrivateRoute exact path="/explorecars">
         <ExploreCars />
       </PrivateRoute>
       <Route path="/open/:city/:car/:model/:carId">
           <SingleProduct/>
       </Route>
+
       <PrivateRoute exact path="/profile">
         <Profile />
       </PrivateRoute>
       <Route>Error 404! you have reach the end of the web.</Route>
-
     </Switch>
   );
 };

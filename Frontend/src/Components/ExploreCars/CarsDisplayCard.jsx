@@ -1,30 +1,39 @@
 import React from "react";
+import { useHistory } from "react-router-dom"
 
 import { Image, Section, Text } from "./exploreCarsStyledComponents";
+import styles from "./carsDisplayCards.module.css"
 
-export default function CarsDisplayCard() {
+export default function CarsDisplayCard({image_url,name,fuel_type,transmission_type,_id}) {
+
+  const history = useHistory();
+
+  const handleId = () => {
+    history.push(`/open/:city/:car/:model/${_id}`)
+  }
+
   return (
-    <div>
+    <div onClick={handleId} className={styles.carsCard}>
       <Section cards>
         <Section imagesection>
-          <Image src="https://s3-us-west-2.amazonaws.com/revvselfdrivecar/Open/Hatchback_new/Maruti_Alto800.jpg" />
+          <Image src={image_url[0]} />
         </Section>
         <Section carinfo>
-          <Text carName>Maruti Alto 800</Text>
+          <Text carName>{name}</Text>
           <Section specs>
             <Section icon>
               <Image
                 icon
                 src="https://www.revv.co.in/grapheneImages/CarsAndPricing/transmission-icon.svg"
               />
-              <Text icon>Petrol</Text>
+              <Text icon>{fuel_type}</Text>
             </Section>
             <Section icon>
               <Image
                 icon
                 src="https://www.revv.co.in/grapheneImages/CarsAndPricing/automatic-icon.svg"
               />
-              <Text icon>Manual</Text>
+              <Text icon>{transmission_type}</Text>
             </Section>
           </Section>
         </Section>

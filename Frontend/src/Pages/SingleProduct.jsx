@@ -14,12 +14,13 @@ export const SingleProduct = () => {
 
     const dispatch = useDispatch();
     const { carId } = useParams();
+    // console.log(carId)
     React.useEffect(() => {
     dispatch(getCarById("60fbb9a55357f7bf027b24af"));
     },[dispatch,carId])
     const car_data = useSelector(state => state.singleCar.car_data);
     // const isLoading = useSelector(state => state.singleCar.isLoading);
-    console.log(car_data);
+    // console.log(car_data);
 
     return (
         <>
