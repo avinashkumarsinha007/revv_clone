@@ -8,55 +8,86 @@ import { ProductBox } from "./productBox";
 const arr = [
     {
         img: "https://www.revv.co.in/grapheneImages/PDP/flash.svg",
-        message: "1",
+        message: 1,
         class: styles.paper,
-        id:1
+        id: 1,
+        discount:8
     },
     {
         img: "https://www.revv.co.in/grapheneImages/PDP/flash.svg",
-        message: "3",
+        message: 3,
         class: styles.paper,
-        id:2
+        id: 2,
+        discount:8
+        
     },
     {
         img: "https://www.revv.co.in/grapheneImages/PDP/flash.svg",
-        message: "6",
+        message: 6,
         class: styles.paper,
-        id:3
+        id: 3,
+        discount:9
+        
     },
     {
         img: null,
-        message: "12",
+        message: 12,
         class: styles.paper,
-        id:4
+        id: 4,
+        discount:10
+        
     },
     {
         img: null,
-        message: "24",
+        message: 24,
         class: styles.paper,
-        id:5
+        id: 5,
+        discount:11
+        
     },
     {
         img: null,
-        message: "36",
-        class: styles.paper,
-        id:6
+        message: 36,
+        class: styles.paper1,
+        id: 6,
+        discount:12
+        
     }
 ]
-export const Product = () => {
+export const Product = ({carsData}) => {
     const [state, setState] = React.useState(arr);
+    const [value, setValue] = React.useState(carsData?.subscribe_charge_per_month || 17440);
+    const [dis, setDiscount] = React.useState(12);
 
-    const handleClick = (id) => {
+    React.useEffect(() => {
+        var discountedValue = (carsData?.subscribe_charge_per_month || 17440) - Math.floor((Number(carsData?.subscribe_charge_per_month || 17440) * state[5].discount) / 100);
+        var updatedDiscount = state[5].discount
+        setValue(discountedValue);
+        setDiscount(updatedDiscount);
+    }, [carsData]);
+
+    const handleClick = (els) => {
         
-        const updatedArr = state.map(el => el.id === id ? { ...el, class: styles.paper1 } : { ...el, class: styles.paper });
+        const updatedArr = state.map(el => el.id === els.id ? { ...el, class: styles.paper1 } : { ...el, class: styles.paper });
         setState(updatedArr);
+        
+        for (let i = 0; i < state.length; i++)
+        {
+            if (state[i].id === els.id)
+            {
+                var discountedValue = (carsData?.subscribe_charge_per_month || 17440)-Math.floor((Number(carsData?.subscribe_charge_per_month || 17440) * state[i].discount) / 100) 
+                var updatedDiscount = state[i].discount
+            }
+        }
+        setValue(discountedValue);
+        setDiscount(updatedDiscount);
     }
-
+    
     return (
         <>           
             <CustomCard type="secondary">               
                 <div className={styles.Container1}>
-                <h1 className={styles.header1}>Maruti Alto 800</h1>
+                    <h1 className={styles.header1}>{carsData.name}</h1>
                 </div>
                 <h2 className={styles.header2}>Subscription Tenure</h2>
                 <Grid container spacing={1} style={{ padding: 25, marginTop: -30 }}>
@@ -66,7 +97,7 @@ export const Product = () => {
                         })
                     }
                 </Grid>
-                <p style={{marginTop:0}}><span className={styles.p1}>₹ 14,399</span><span className={styles.p2}>/month</span><s className={styles.p3}>₹16,000</s><span className={styles.p4}>(10% Off)</span></p>
+                <p style={{ marginTop: 0 }}><span className={styles.p1}>₹{value}</span><span className={styles.p2}>/month</span><s className={styles.p3}>₹{carsData?.subscribe_charge_per_month }</s><span className={styles.p4}>({dis}% Off)</span></p>
                 <p className={styles.p5}>(Inclusive of taxes)</p>
                 <div  className={styles.Button1}>
                     <p style={{paddingTop:16}}><span style={{color:"white",fontSize:18,marginLeft:"40%"}}>{`Proceed >`}</span></p>
