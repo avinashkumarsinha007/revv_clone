@@ -32,7 +32,14 @@ export const Router = () => {
       <PrivateRoute exact path="/open/:city/stock/car_pricing">
         shubham filter page
       </PrivateRoute> */}
-      <PrivateRoute path="/open/:city/:car/:model">product page</PrivateRoute>
+
+      <PrivateRoute exact path="/explorecars">
+        <ExploreCars />
+      </PrivateRoute>
+      <Route path="/open/:city/:car/:model/:carId">
+          <SingleProduct/>
+      </Route>
+
       <PrivateRoute exact path="/profile">
         <Profile />
       </PrivateRoute>
