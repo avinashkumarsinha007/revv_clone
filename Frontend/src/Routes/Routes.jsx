@@ -5,6 +5,7 @@ import ExploreCars from "../Pages/ExploreCars/ExploreCars";
 import Dashboard from "../Pages/Home/Dashboard";
 import Open from "../Pages/Home/Open";
 import Profile from "../Pages/Profile/Profile";
+import { SingleProduct } from "../Pages/SingleProduct";
 
 export const Router = () => {
   return (
@@ -18,6 +19,12 @@ export const Router = () => {
       <PrivateRoute exact path="/open/:city">
         Subscription
       </PrivateRoute>
+      <Route path = "/explorecars">
+        <ExploreCars />
+      </Route>
+      <Route path="/open/:city/:car/:model/:Id">
+        <SingleProduct />
+      </Route>
       {/* <PrivateRoute path="/login">
         <Login />
       </PrivateRoute> */}
@@ -25,9 +32,6 @@ export const Router = () => {
       <PrivateRoute exact path="/open/:city/stock/car_pricing">
         shubham filter page
       </PrivateRoute> */}
-      <PrivateRoute exact path="/explorecars">
-        <ExploreCars />
-      </PrivateRoute>
       <PrivateRoute path="/open/:city/:car/:model">product page</PrivateRoute>
       <PrivateRoute exact path="/profile">
         <Profile />

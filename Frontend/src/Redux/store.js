@@ -1,7 +1,10 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import { AuthReducer } from "./Auth/AuthReducer";
+import { ExploreCarsReducer } from "./ExploreCars/exploreCarsReducer";
+
 const rootReducer = combineReducers({
   auth: AuthReducer,
+  carExplore: ExploreCarsReducer,
 });
 
 const customThunks = (store) => (next) => (action) => {
