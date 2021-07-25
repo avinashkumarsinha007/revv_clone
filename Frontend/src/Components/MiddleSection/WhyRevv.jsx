@@ -1,11 +1,10 @@
-import React from "react";
-import { RevvB } from "./RevvB";
-import styles from "./MiddleSection.module.css";
-function WhyRevv() {
-  return (
-    <div>
-      <RevvB />
-    </div>
-  );
+import React from 'react'
+
+function WhyRevv(){
+    return(
+        <div>
+            <h3>Why Revv</h3>
+        </div>
+    )
 }
-export { WhyRevv };
+export {WhyRevv}
