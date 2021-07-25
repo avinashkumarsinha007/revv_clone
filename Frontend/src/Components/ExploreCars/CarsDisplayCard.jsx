@@ -9,7 +9,7 @@ export default function CarsDisplayCard({image_url,name,fuel_type,transmission_t
   const history = useHistory();
 
   const handleId = () => {
-    history.push(`/open/:city/:car/:model/:${_id}`)
+    history.push(`/open/:city/:car/:model/${_id}`)
   }
 
   return (

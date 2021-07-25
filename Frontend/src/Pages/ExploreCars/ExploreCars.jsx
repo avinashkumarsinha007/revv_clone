@@ -34,7 +34,7 @@ const carBrands = [
 const options = ["Honda", "Hyundai", "Maruti", "Toyota", "Mahindra", "Renault"];
 
 export default function ExploreCars() {
-  const cities = ["mumbai", "pune", "chennai", "Delhi-NCR"];
+  const cities = ["Mumbai", "Pune", "Chennai", "Delhi-NCR"];
   const [fuelselect, setFuelselect] = React.useState({});
   const [segmentSelect, setSegmentSelect] = React.useState({});
   const [transmission, setTransmission] = React.useState({});
