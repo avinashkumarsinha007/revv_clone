@@ -18,8 +18,8 @@ export const Router = () => {
       <Route exact path="/open/:city">
         Subscription
       </Route>
-      <Route path = "/login">
-        <Login />
+      <Route path = "/signup">
+        <Signup />
       </Route>
       <Route exact path="/explorecars">
         <ExploreCars />
